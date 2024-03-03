@@ -12,10 +12,10 @@
     command: sudo systemctl start docker
 
   - name: stop all docker contianer
-    command: sudo docker stop $(docker ps --all -q)
+    command: sudo docker stop $(sudo docker ps -a -q)
    
   - name: remove all the container
-    command: sudo docker rm $(docker ps --all -q)
+    command: sudo docker rm $(sudo docker ps -a -q)
     
   - name: deploy insureme application
     command: sudo docker run -itd -p 8081:8081 --name insure-me tekbista37545/insure-me:1.0
