@@ -11,8 +11,8 @@
   - name: start docker service
     command: sudo systemctl start docker
 
-  -name: stop all docker contianer
-   command: sudo docker container stop $(sudo docker ps -aq)
+  - name: stop all docker contianer
+    command: sudo docker container stop $(sudo docker ps -aq)
    
   - name: remove all the container
     command: sudo docker container rm $(sudo docker ps -aq)
