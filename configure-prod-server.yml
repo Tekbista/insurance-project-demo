@@ -10,6 +10,12 @@
 
   - name: start docker service
     command: sudo systemctl start docker
-
+    
+  - name: stop all the running container
+    command: sudo docker stop docker ps
+    
+  - name: remove all the container
+    command: sudo docker rm docker ps -a
+    
   - name: deploy insureme application
-    command: sudo docker run -itd -p 8081:8081 shubhamkushwah123/insure-me:1.0
+    command: sudo docker run -itd -p 8081:8081 tekbista37545/insure-me:1.0
